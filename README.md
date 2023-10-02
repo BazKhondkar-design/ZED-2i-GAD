@@ -345,7 +345,7 @@ Display the topics are running using the command:
 ros2 topic list 
 ```
 
-Display the rviz suing the command:
+Display the rviz using the command:
 
 ```
 rviz2
