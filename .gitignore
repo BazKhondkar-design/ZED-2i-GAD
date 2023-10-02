@@ -1,0 +1,9 @@
+/install
+/build
+/log
+/doxygen_data
+/out
+/.vs
+/.vscode
+util/build/
+.DS_Store

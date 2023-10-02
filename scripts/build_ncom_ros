@@ -1,0 +1,15 @@
+
+# source the foxy
+source /opt/ros/foxy/setup.bash # "." and "source" are interchangeable (unix)
+# change to working folder
+cd $HOME/projects
+# clone the ncom to ros decoder
+git clone https://github.com/OxfordTechnicalSolutions/oxts_ros2_driver
+# go to the oxts folder
+cd oxts_ros2_driver
+rosdep update
+rosdep install --from-path .
+cd ../..
+# build and install
+colcon build
+sudo . install/setup.sh

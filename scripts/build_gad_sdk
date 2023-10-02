@@ -1,0 +1,13 @@
+# change to working folder
+cd $HOME/projects
+# clone the folder
+git clone https://github.com/OxfordTechnicalSolutions/gad-sdk.git --recursive
+# change to gad-sdk
+cd gad-sdk
+# create build folder
+mkdir build
+# change to build folder
+cd build
+# create make, build and install
+cmake ..
+make --build . --target install

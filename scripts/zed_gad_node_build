@@ -1,0 +1,11 @@
+# change to working folder
+
+cd $HOME/projects
+
+#clone the ZED-GAD
+
+git clone https://github.com/BazKhondkar-design/Zed-GAD.git
+
+#checout the documents
+
+git checkout documents
