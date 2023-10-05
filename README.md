@@ -106,10 +106,10 @@ the time difference delta time between the frame and delta position to compute t
 # Camera position global frame into body frame
 
 ```
-*double oriX = msg->pose.pose.orientation.x;
+double oriX = msg->pose.pose.orientation.x;
 double oriY = msg->pose.pose.orientation.y;
 double oriZ = msg->pose.pose.orientation.z;
-double oriW = msg->pose.pose.orientation.w;*
+double oriW = msg->pose.pose.orientation.w;
 ```
 
 Converts the camera pose orientation into camera heading (yaw), pitch and roll angles using the *tf2::Quaternion* and *tf2::Matrix*.
@@ -413,5 +413,5 @@ of the AV200.
 Run the command to publish the NCOM odom topic
 
 ```
-ros2 launch oxts run.py
+ros2 launch oxts run.py unit_pi:=<IP_Address> lrf_source:=0
 ```
