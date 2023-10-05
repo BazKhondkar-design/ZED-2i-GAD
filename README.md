@@ -228,7 +228,7 @@ Make sure current folder is **project** folder.
 
 ### Install script
 
-sudo .\zed-gad\script\build_gad_sdk.sh
+sudo .\zed-gad\script\build_gad_sdk
 
 ### install manually
 
@@ -380,7 +380,8 @@ ros2 run zed_gad zed_gad <AV200 IP Address>
 
 Use the ubuntu NetCat command to send udp packet on port 3001 for AV200.
 
-*nc -u <AV200 IP Address> 3001*
+*nc -u <AV200_IP_Address> 3001*
+
 !Reset 
 
 !set init aidpos <lat> <lon> <alt>
