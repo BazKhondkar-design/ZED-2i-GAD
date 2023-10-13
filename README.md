@@ -106,10 +106,10 @@ the time difference delta time between the frame and delta position to compute t
 # Camera position global frame into body frame
 
 ```
-*double oriX = msg->pose.pose.orientation.x;
+double oriX = msg->pose.pose.orientation.x;
 double oriY = msg->pose.pose.orientation.y;
 double oriZ = msg->pose.pose.orientation.z;
-double oriW = msg->pose.pose.orientation.w;*
+double oriW = msg->pose.pose.orientation.w;
 ```
 
 Converts the camera pose orientation into camera heading (yaw), pitch and roll angles using the *tf2::Quaternion* and *tf2::Matrix*.
@@ -228,7 +228,7 @@ Make sure current folder is **project** folder.
 
 ### Install script
 
-sudo .\zed-gad\script\build_gad_sdk.sh
+sudo .\zed-gad\script\build_gad_sdk
 
 ### install manually
 
@@ -355,7 +355,7 @@ Display the topics are running using the command:
 ros2 topic list 
 ```
 
-Display the rviz suing the command:
+Display the rviz using the command:
 
 ```
 rviz2
@@ -390,7 +390,8 @@ ros2 run zed_gad zed_gad <AV200 IP Address>
 
 Use the ubuntu NetCat command to send udp packet on port 3001 for AV200.
 
-*nc -u <AV200 IP Address> 3001*
+*nc -u <AV200_IP_Address> 3001*
+
 !Reset 
 
 !set init aidpos <lat> <lon> <alt>
@@ -423,7 +424,7 @@ of the AV200.
 Run the command to publish the NCOM odom topic
 
 ```
-ros2 launch oxts run.py
+ros2 launch oxts run.py unit_pi:=<IP_Address> lrf_source:=0
 ```
 
 # ZED camera perfromance using GAD
@@ -431,5 +432,3 @@ ros2 launch oxts run.py
 <image src="./images/ZedCameraPerfromance.png" width="800">
 
 Green represent ground using GNSS truth and red represent Camera ZED-GAD.
-
-

@@ -28,7 +28,7 @@
 
 namespace zed_gad
 {
-
+  //Constructor implementation
   ZedGadPoseOdom::ZedGadPoseOdom(const std::string av200_ip)  : Node("zed_gad"), m_prevX(0), m_prevY(0), m_prevZ(0), m_prevTime(0)
   {
     rclcpp::QoS qos(10);
@@ -58,16 +58,18 @@ namespace zed_gad
     
   }
 
+  //Topics received from NCOM to ROS2
   void ZedGadPoseOdom::odomINSCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
   {
-    std::cout << "INS odom callback" << std::endl;
+    // NOT used	  
+    //std::cout << "INS odom callback" << std::endl;
     //msg->twist.linear.x;
     //msg->twist.linear.y;
     //msg->twist.linear.z;
 
   } 
 
-  //
+  //odom received from camera
   void ZedGadPoseOdom::odomCameraCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
   { 
     //std::cout << "Camera odom callback" << std::endl;
