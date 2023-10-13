@@ -304,6 +304,16 @@ If the AV200 ip address and Jetson Orin Nano ip address are not on the same subn
 The Jetson Orin Nano has the ip address 192.168.25.221 and AV200 has the ip address 169.254.22.110. Add ip address 
 169.254.22.221 so that Jetson Orin can send command and ftp files from the unit.
 
+## AV200 mobile.cfg configuration
+
+-x>gps1: b5 62 06 8a 14 00 00 01 00 00 05 00 05 40 00 00 00 00 04 00 05 40 e8 03 00 00 23 be
+-time_sync_int
+-gad_on130  ### ON ###
+-location3_0.08_0.04_0.01_0.05_0.05_0.05
+-attitude5_0.0_0.0_180.0_0.10_0.10_0.10 # roll rotation required for the AV200 in the same frame as the Camera
+-gad_loc_id130_3
+-gad_att_id130_5
+-sync_mode_xoemcore
 
 ## 7)   System Architecture
 
@@ -415,3 +425,11 @@ Run the command to publish the NCOM odom topic
 ```
 ros2 launch oxts run.py
 ```
+
+# ZED camera perfromance using GAD
+
+<image src="./images/ZedCameraPerfromance.png" width="800">
+
+Green represent ground using GNSS truth and red represent Camera ZED-GAD.
+
+
