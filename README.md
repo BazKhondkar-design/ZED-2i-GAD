@@ -23,15 +23,15 @@ Directory structure must be followed in order for a successful installation.
 
 Working folder:
 
-**~/projects/**
+**~/projects/ros_ws/**
 
 ROS2 Work Space folder:
 
-**~/projects/ros_ws/**  colcon build should be done from this folder.
+**~/projects/ros_ws/src/**  colcon build should be done from this folder.
 
 ROS2 packages folder:
 
-**~/projects/ros_ws/src/**   clone all ROS2 wrapper and packages from this folder.
+**~/projects/ros_ws/**   clone all ROS2 wrapper and packages from this folder.
 
 Follow the installation steps as discussed below:
 
@@ -304,16 +304,34 @@ If the AV200 ip address and Jetson Orin Nano ip address are not on the same subn
 The Jetson Orin Nano has the ip address 192.168.25.221 and AV200 has the ip address 169.254.22.110. Add ip address 
 169.254.22.221 so that Jetson Orin can send command and ftp files from the unit.
 
-## AV200 mobile.cfg configuration
+# ZED canera and AV200 setup for PTP (Precision Time Protocol) using GNSS
+
+ZED camera support [PTP](https://www.stereolabs.com/docs/video/multi-camera/) setup and AV200 configured with GNSS as the master for PTP.
+Install the PTP on Jetson Orin using the following [link](https://tsn.readthedocs.io/timesync.html), its best to clone it within project folder
+follow the command to build and install.
+
+Use NAVconfig to configure the AV200 as PTP master. Disable the Automatic Date & Time update over internet on Jetson Orin.
+
+Edit the gPTP.cfg file and network_transport should be set to UDPv4.
+
+On the Jetson Orin run the folowing command:
+
+```
+sudo ptp4l -i eth0 -f configs/gPTP.cfg --step_threshold=1 -m -S -s
+```
+
+The PTP configs is in the timesync folder and make sure you are in the correct folder.
+
+## AV200 mobile.cfg configuration without GNSS
 
 -x>gps1: b5 62 06 8a 14 00 00 01 00 00 05 00 05 40 00 00 00 00 04 00 05 40 e8 03 00 00 23 be
--time_sync_int
--gad_on130  ### ON ###
--location3_0.08_0.04_0.01_0.05_0.05_0.05
+-time_sync_int # Allow AV200 to receive time using command, AV200 does not have GNSS connected and would require external time
+-gad_on130  ### Set the GAD packet ON ###
+-location3_0.08_0.04_0.01_0.05_0.05_0.05 # position of the camera with respect to AV200 IMU
 -attitude5_0.0_0.0_180.0_0.10_0.10_0.10 # roll rotation required for the AV200 in the same frame as the Camera
 -gad_loc_id130_3
 -gad_att_id130_5
--sync_mode_xoemcore
+-sync_mode_xoemcore # GPS card to generate PPS
 
 ## 7)   System Architecture
 
