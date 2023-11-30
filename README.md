@@ -21,17 +21,17 @@ system and run the application in ROS2 environment.
 # Installation
 Directory structure must be followed in order for a successful installation.
 
-Working folder:
+ROS2 Working folder:
 
 **~/projects/ros_ws/**
 
 ROS2 Work Space folder:
 
-**~/projects/ros_ws/src/**  colcon build should be done from this folder.
+**~/projects/ros_ws/**  colcon build should be done from this folder.
 
 ROS2 packages folder:
 
-**~/projects/ros_ws/**   clone all ROS2 wrapper and packages from this folder.
+**~/projects/ros_ws/src/**   clone all ROS2 wrapper and packages from this folder.
 
 Follow the installation steps as discussed below:
 
@@ -224,7 +224,7 @@ av200_monitor <ip_address> <lat> <lon> <alt> <heading_deg> <heading_accuracy>
 
 ## 3)	GAD SDK
 
-Make sure current folder is **project** folder.
+Make sure current folder is **projects** folder.
 
 ### Install script
 
