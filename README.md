@@ -205,7 +205,7 @@ m_gh.SendPacket(gv);
 zed_gad.h       -> header file to declare the class function etc
 main.cpp        -> runs the ros2 gad_zed node
 
-# Execuitable:<br>
+# Executable:<br>
 
 Use the av200_monitor to initialise the AV200. It will send the following commands based on the av200 navigation status:
 
