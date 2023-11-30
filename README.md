@@ -322,6 +322,13 @@ sudo ptp4l -i eth0 -f configs/gPTP.cfg --step_threshold=1 -m -S -s
 
 The PTP configs is in the timesync folder and make sure you are in the correct folder.
 
+The mobile.cfg file needs to have the following command:
+
+```
+-aid_gpsint1_off
+```
+Above command allows to disable use of GNSS packets for navigation and only use for timing. 
+
 ## AV200 mobile.cfg configuration without GNSS
 ```
 -x>gps1: b5 62 06 8a 14 00 00 01 00 00 05 00 05 40 00 00 00 00 04 00 05 40 e8 03 00 00 23 be
