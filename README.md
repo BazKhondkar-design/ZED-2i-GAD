@@ -323,7 +323,7 @@ sudo ptp4l -i eth0 -f configs/gPTP.cfg --step_threshold=1 -m -S -s
 The PTP configs is in the timesync folder and make sure you are in the correct folder.
 
 ## AV200 mobile.cfg configuration without GNSS
-
+```
 -x>gps1: b5 62 06 8a 14 00 00 01 00 00 05 00 05 40 00 00 00 00 04 00 05 40 e8 03 00 00 23 be
 -time_sync_int # Allow AV200 to receive time using command, AV200 does not have GNSS connected and would require external time
 -gad_on130  ### Set the GAD packet ON ###
@@ -332,7 +332,7 @@ The PTP configs is in the timesync folder and make sure you are in the correct f
 -gad_loc_id130_3
 -gad_att_id130_5
 -sync_mode_xoemcore # GPS card to generate PPS
-
+```
 ## 7)   System Architecture
 
 <img src="./images/SystemArchitecture.png" width="800">
